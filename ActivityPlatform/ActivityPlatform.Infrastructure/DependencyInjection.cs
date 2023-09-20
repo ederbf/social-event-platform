@@ -1,6 +1,8 @@
 ﻿using ActivityPlatform.Application.Common.Interfaces.Authentication;
+using ActivityPlatform.Application.Common.Interfaces.Persistence;
 using ActivityPlatform.Application.Common.Interfaces.Services;
 using ActivityPlatform.Infrastructure.Authentication;
+using ActivityPlatform.Infrastructure.Persistence;
 using ActivityPlatform.Infrastructure.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,6 +19,8 @@ namespace ActivityPlatform.Infrastructure
 
             services.AddSingleton<IJwtTokenGenerator, JwtTokenGenerator>();
             services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
+
+            services.AddScoped<IUserRepository, UserRepository>();
             return services;
         }
     }

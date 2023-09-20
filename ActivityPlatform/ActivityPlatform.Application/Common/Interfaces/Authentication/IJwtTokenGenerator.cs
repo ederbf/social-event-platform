@@ -1,7 +1,9 @@
-﻿namespace ActivityPlatform.Application.Common.Interfaces.Authentication
+﻿using ActivityPlatform.Domain;
+
+namespace ActivityPlatform.Application.Common.Interfaces.Authentication
 {
     public interface IJwtTokenGenerator
     {
-        string GenerateToken(Guid userId, string firstName, string lastName);
+        string GenerateToken(User user);
     }
 }
