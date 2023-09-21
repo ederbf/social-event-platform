@@ -1,6 +1,8 @@
 ﻿using ActivityPlatform.Application.Common.Interfaces.Authentication;
 using ActivityPlatform.Application.Common.Interfaces.Persistence;
 using ActivityPlatform.Domain;
+using ActivityPlatform.Domain.Common.Errors;
+using ErrorOr;
 
 namespace ActivityPlatform.Application.Services.Authentication
 {
@@ -14,12 +16,12 @@ namespace ActivityPlatform.Application.Services.Authentication
             _jwtTokenGenerator = jwtTokenGenerator;
             _userRepository = userRepository;
         }
-        public AuthenticationResult Register(string firstName, string lastName, string email, string password)
+        public ErrorOr<AuthenticationResult> Register(string firstName, string lastName, string email, string password)
         {
             //1 .Check if user exists
             if (_userRepository.GetUserByEmail(email) is not null)
             {
-                throw new Exception($"User with email {email} already exists");
+                return Errors.User.DuplicateEmail;
             }
 
             //2. Create user (generate unique id and persist to DB
@@ -41,18 +43,18 @@ namespace ActivityPlatform.Application.Services.Authentication
                 token);
         }
 
-        public AuthenticationResult Login(string email, string password)
+        public ErrorOr<AuthenticationResult> Login(string email, string password)
         {
             //1. Validate the user exists
             if (_userRepository.GetUserByEmail(email) is not User user)
             {
-                throw new Exception("User with given email does not exist");
+                return Errors.Authentication.InvalidCredentials;
             }
 
             //2. Validate the password is correct
             if (user.Password != password)
             {
-                throw new Exception("Invalid password");
+                return Errors.Authentication.InvalidCredentials;
             }
 
             //3. Create jwt token
