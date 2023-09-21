@@ -1,5 +1,7 @@
+using ActivityPlatform.Api.Common.Errors;
 using ActivityPlatform.Application;
 using ActivityPlatform.Infrastructure;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +11,8 @@ builder.Services
 
 // Add services to the container.
 builder.Services.AddControllers();
+
+builder.Services.AddSingleton<ProblemDetailsFactory, ActivityPlatformProblemDetailsFactory>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -22,10 +26,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseExceptionHandler("/error");
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
 app.MapControllers();
-
 app.Run();
