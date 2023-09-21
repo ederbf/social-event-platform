@@ -1,5 +1,4 @@
-﻿using ActivityPlatform.Application.Services.Authentication.Commands;
-using ActivityPlatform.Application.Services.Authentication.Queries;
+﻿using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace ActivityPlatform.Application
@@ -8,8 +7,7 @@ namespace ActivityPlatform.Application
     {
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
-            services.AddScoped<IAuthenticationCommandService, AuthenticationCommandService>();
-            services.AddScoped<IAuthenticationQueryService, AuthenticationQueryService>();
+            services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(DependencyInjection).Assembly));
 
             return services;
         }

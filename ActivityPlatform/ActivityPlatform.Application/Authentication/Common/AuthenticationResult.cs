@@ -1,6 +1,6 @@
 ﻿using ActivityPlatform.Domain;
 
-namespace ActivityPlatform.Application.Services.Authentication.Common
+namespace ActivityPlatform.Application.Authentication.Common
 {
     public record AuthenticationResult(
         User User,

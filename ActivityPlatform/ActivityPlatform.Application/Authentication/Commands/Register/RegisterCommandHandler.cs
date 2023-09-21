@@ -1,26 +1,29 @@
-﻿using ActivityPlatform.Application.Common.Interfaces.Authentication;
+﻿using ActivityPlatform.Application.Authentication.Common;
+using ActivityPlatform.Application.Common.Interfaces.Authentication;
 using ActivityPlatform.Application.Common.Interfaces.Persistence;
-using ActivityPlatform.Application.Services.Authentication.Common;
 using ActivityPlatform.Domain;
 using ActivityPlatform.Domain.Common.Errors;
 using ErrorOr;
+using MediatR;
 
-namespace ActivityPlatform.Application.Services.Authentication.Commands
+namespace ActivityPlatform.Application.Authentication.Commands.Register
 {
-    public class AuthenticationCommandService : IAuthenticationCommandService
+    public class RegisterCommandHandler : 
+        IRequestHandler<RegisterCommand, ErrorOr<AuthenticationResult>>
     {
         private readonly IJwtTokenGenerator _jwtTokenGenerator;
         private readonly IUserRepository _userRepository;
 
-        public AuthenticationCommandService(IJwtTokenGenerator jwtTokenGenerator, IUserRepository userRepository)
+        public RegisterCommandHandler(IJwtTokenGenerator jwtTokenGenerator, IUserRepository userRepository)
         {
             _jwtTokenGenerator = jwtTokenGenerator;
             _userRepository = userRepository;
         }
-        public ErrorOr<AuthenticationResult> Register(string firstName, string lastName, string email, string password)
+
+        public async Task<ErrorOr<AuthenticationResult>> Handle(RegisterCommand command, CancellationToken cancellationToken)
         {
             //1 .Check if user exists
-            if (_userRepository.GetUserByEmail(email) is not null)
+            if (_userRepository.GetUserByEmail(command.Email) is not null)
             {
                 return Errors.User.DuplicateEmail;
             }
@@ -28,10 +31,10 @@ namespace ActivityPlatform.Application.Services.Authentication.Commands
             //2. Create user (generate unique id and persist to DB
             var user = new User
             {
-                FirstName = firstName,
-                LastName = lastName,
-                Email = email,
-                Password = password
+                FirstName = command.FirstName,
+                LastName = command.LastName,
+                Email = command.Email,
+                Password = command.Password
             };
 
             _userRepository.Add(user);
