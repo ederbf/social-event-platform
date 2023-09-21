@@ -1,24 +1,29 @@
-﻿using ActivityPlatform.Application.Services.Authentication;
-using ActivityPlatform.Contracts.Authentication;
+﻿using ActivityPlatform.Contracts.Authentication;
 using ErrorOr;
 using Microsoft.AspNetCore.Mvc;
 using ActivityPlatform.Domain.Common.Errors;
+using ActivityPlatform.Application.Services.Authentication.Commands;
+using ActivityPlatform.Application.Services.Authentication.Common;
+using ActivityPlatform.Application.Services.Authentication.Queries;
+using Microsoft.AspNetCore.Authentication;
 
 namespace ActivityPlatform.Api.Controllers
 {
     [Route("auth")]
     public class AuthenticationController : ApiController
     {
-        private readonly IAuthenticationService _authenticationService;
-        public AuthenticationController(IAuthenticationService authenticationService)
+        private readonly IAuthenticationCommandService _authenticationCommandService;
+        private readonly IAuthenticationQueryService _authenticationQueryService;
+        public AuthenticationController(IAuthenticationCommandService authenticationCommandService, IAuthenticationQueryService authenticationQueryService)
         {
-            _authenticationService = authenticationService;
+            _authenticationCommandService = authenticationCommandService;
+            _authenticationQueryService = authenticationQueryService;
         }
 
         [HttpPost("register")]
         public IActionResult Register(RegisterRequest request)
         {
-            ErrorOr<AuthenticationResult> authResult = _authenticationService.Register(
+            ErrorOr<AuthenticationResult> authResult = _authenticationCommandService.Register(
                 request.FirstName,
                 request.LastName,
                 request.Email,
@@ -32,7 +37,7 @@ namespace ActivityPlatform.Api.Controllers
         [HttpPost("login")]
         public IActionResult Login(LoginRequest request)
         {
-            ErrorOr<AuthenticationResult> authResult = _authenticationService.Login(
+            ErrorOr<AuthenticationResult> authResult = _authenticationQueryService.Login(
                 request.Email,
                 request.Password);
 

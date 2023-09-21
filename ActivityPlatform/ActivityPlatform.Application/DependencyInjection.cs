@@ -1,4 +1,5 @@
-﻿using ActivityPlatform.Application.Services.Authentication;
+﻿using ActivityPlatform.Application.Services.Authentication.Commands;
+using ActivityPlatform.Application.Services.Authentication.Queries;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace ActivityPlatform.Application
@@ -7,7 +8,8 @@ namespace ActivityPlatform.Application
     {
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
-            services.AddScoped<IAuthenticationService, AuthenticationService>();
+            services.AddScoped<IAuthenticationCommandService, AuthenticationCommandService>();
+            services.AddScoped<IAuthenticationQueryService, AuthenticationQueryService>();
 
             return services;
         }
