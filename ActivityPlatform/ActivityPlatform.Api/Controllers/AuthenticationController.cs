@@ -7,10 +7,12 @@ using ActivityPlatform.Application.Authentication.Common;
 using ActivityPlatform.Application.Authentication.Queries.Login;
 using MapsterMapper;
 using ErrorOr;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ActivityPlatform.Api.Controllers
 {
     [Route("auth")]
+    [AllowAnonymous]
     public class AuthenticationController : ApiController
     {
         private readonly ISender _mediator;
