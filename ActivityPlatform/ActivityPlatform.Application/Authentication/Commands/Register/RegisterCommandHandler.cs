@@ -22,6 +22,8 @@ namespace ActivityPlatform.Application.Authentication.Commands.Register
 
         public async Task<ErrorOr<AuthenticationResult>> Handle(RegisterCommand command, CancellationToken cancellationToken)
         {
+            await Task.CompletedTask; //Without this line we get a warning because we aren't doing anything async. Will get rid of it when we do have async logic.
+
             //1 .Check if user exists
             if (_userRepository.GetUserByEmail(command.Email) is not null)
             {
