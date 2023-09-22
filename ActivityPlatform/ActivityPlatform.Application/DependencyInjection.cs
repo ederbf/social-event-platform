@@ -15,9 +15,9 @@ namespace ActivityPlatform.Application
         {
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(DependencyInjection).Assembly));
 
-            services.AddScoped<
-                IPipelineBehavior<RegisterCommand, ErrorOr<AuthenticationResult>>,
-                ValidateRegisterCommandBehavior>();
+            services.AddScoped(
+                typeof(IPipelineBehavior<,>),
+                typeof(ValidationBehavior<,>));
 
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
             return services;
