@@ -26,9 +26,7 @@ namespace ActivityPlatform.Application.Authentication.Commands.Register
 
             //1 .Check if user exists
             if (_userRepository.GetUserByEmail(command.Email) is not null)
-            {
                 return Errors.User.DuplicateEmail;
-            }
 
             //2. Create user (generate unique id and persist to DB
             var user = new User

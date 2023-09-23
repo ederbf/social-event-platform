@@ -68,11 +68,10 @@ namespace ActivityPlatform.Api.Common.Errors
                 Instance = instance,
             };
 
+            // For validation problem details, don't overwrite the default title with null.
             if (title != null)
-            {
-                // For validation problem details, don't overwrite the default title with null.
                 problemDetails.Title = title;
-            }
+            
 
             ApplyProblemDetailsDefaults(httpContext, problemDetails, statusCode.Value);
 
@@ -91,17 +90,13 @@ namespace ActivityPlatform.Api.Common.Errors
 
             var traceId = Activity.Current?.Id ?? httpContext?.TraceIdentifier;
             if (traceId != null)
-            {
                 problemDetails.Extensions["traceId"] = traceId;
-            }
 
             //here we add our custom properties
             var errors = httpContext?.Items[HttpContextItemKeys.Errors] as List<Error>;
 
             if (errors is not null)
-            {
                 problemDetails.Extensions.Add("errorCodes", errors.Select(e => e.Code));
-            }
             
         }
     }

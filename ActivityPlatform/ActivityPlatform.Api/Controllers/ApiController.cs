@@ -13,13 +13,9 @@ namespace ActivityPlatform.Api.Controllers
         protected IActionResult Problem(List<Error> errors)
         {
             if (errors.Count is 0)
-            {
                 return Problem();
-            }
             if (errors.All(error => error.Type == ErrorType.Validation))
-            {
                 return ValidationProblem(errors);
-            }
 
             HttpContext.Items[HttpContextItemKeys.Errors] = errors;
             return Problem(errors[0]);

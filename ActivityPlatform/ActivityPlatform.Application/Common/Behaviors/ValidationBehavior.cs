@@ -24,15 +24,11 @@ namespace ActivityPlatform.Application.Common.Behaviors
             CancellationToken cancellationToken)
         {
             if (_validator is null)
-            {
                 return await next();
-            }
 
             var validationResult = await _validator.ValidateAsync(request, cancellationToken);
             if (validationResult.IsValid) 
-            {
                 return await next();
-            }
 
             var errors = validationResult.Errors
                 .Select(validationFailure => Error.Validation(
