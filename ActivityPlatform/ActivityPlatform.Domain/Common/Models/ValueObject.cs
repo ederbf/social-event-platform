@@ -1,4 +1,4 @@
-﻿namespace SocialEventPlatform.Domain.Models
+﻿namespace SocialEventPlatform.Domain.Common.Models
 {
     public abstract class ValueObject : IEquatable<ValueObject>
     {

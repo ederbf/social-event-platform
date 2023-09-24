@@ -1,4 +1,4 @@
-﻿using SocialEventPlatform.Domain.Models;
+﻿using SocialEventPlatform.Domain.Common.Models;
 
 namespace SocialEventPlatform.Domain.Activity.ValueObjects
 {

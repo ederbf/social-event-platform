@@ -1,8 +1,9 @@
 ﻿using SocialEventPlatform.Domain.Activity.Entities;
 using SocialEventPlatform.Domain.Activity.ValueObjects;
 using SocialEventPlatform.Domain.ActivityReview.ValueObjects;
+using SocialEventPlatform.Domain.Common.Models;
+using SocialEventPlatform.Domain.Common.ValueObjects;
 using SocialEventPlatform.Domain.Host.ValueObjects;
-using SocialEventPlatform.Domain.Models;
 using SocialEventPlatform.Domain.SocialEvent.ValueObjects;
 
 namespace SocialEventPlatform.Domain.Activity
@@ -15,7 +16,7 @@ namespace SocialEventPlatform.Domain.Activity
 
         public string Name { get; }
         public string Description { get; }
-        public string AverageRating { get; }
+        public AverageRating AverageRating { get; }
 
         public IReadOnlyList<ActivitySection> Sections => _sections.AsReadOnly();
 
