@@ -1,30 +1,19 @@
-﻿using SocialEventPlatform.Domain.Activity.Entities;
-using SocialEventPlatform.Domain.ActivityReview.ValueObjects;
-using SocialEventPlatform.Domain.Bill.ValueObjects;
+﻿using SocialEventPlatform.Domain.Activity.ValueObjects;
 using SocialEventPlatform.Domain.Common.Models;
 using SocialEventPlatform.Domain.Common.ValueObjects;
 using SocialEventPlatform.Domain.Host.ValueObjects;
 using SocialEventPlatform.Domain.SocialEvent.ValueObjects;
 using SocialEventPlatform.Domain.User.ValueObjects;
-using static System.Collections.Specialized.BitVector32;
 
 namespace SocialEventPlatform.Domain.Guest
 {
-    public sealed class Guest : AggregateRoot<GuestId>
+    public sealed class Host : AggregateRoot<HostId>
     {
-        private readonly List<Rating> _ratings = new();
-        private readonly List<SocialEventId> _upcomingSocialEventIds = new();
-        private readonly List<SocialEventId> _pastSocialEventIds = new();
-        private readonly List<SocialEventId> _pendingSocialEventIds = new();
-        private readonly List<BillId> _upcomingBillIds = new();
-        private readonly List<ActivityReviewId> _activityReviewIds = new();
+        private readonly List<SocialEventId> _socialEventIds = new();
+        private readonly List<ActivityId> _activityIds = new();
 
-        public IReadOnlyList<Rating> Ratings => _ratings.AsReadOnly();
-        public IReadOnlyList<SocialEventId> UpcomingSocialEventIds => _upcomingSocialEventIds.AsReadOnly();
-        public IReadOnlyList<SocialEventId> PastSocialEvenIds => _pastSocialEventIds.AsReadOnly();
-        public IReadOnlyList<SocialEventId> PendingSocialEventIds => _pendingSocialEventIds.AsReadOnly();
-        public IReadOnlyList<BillId> UpcomingBillIds => _upcomingBillIds.AsReadOnly();
-        public IReadOnlyList<ActivityReviewId> ActivityReviewIds => _activityReviewIds.AsReadOnly();
+        public IReadOnlyList<SocialEventId> SocialEventIds => _socialEventIds.AsReadOnly();
+        public IReadOnlyList<ActivityId> ActivityIds => _activityIds.AsReadOnly();
         public string FirstName { get; }
         public string LastName { get; }
         public string ProfileImage { get; }
@@ -34,15 +23,15 @@ namespace SocialEventPlatform.Domain.Guest
         public DateTime CreatedDateTime { get; }
         public DateTime UpdatedDateTime { get; }
 
-        private Guest(
-            GuestId guestId,
+        private Host(
+            HostId hostId,
             string firstName,
             string lastName,
             string profileImage,
             AverageRating averageRating,
             UserId userId,
             DateTime createdDateTime,
-            DateTime updatedDateTime) : base(guestId)
+            DateTime updatedDateTime) : base(hostId)
         {
             FirstName = firstName;
             LastName = lastName;
@@ -53,7 +42,7 @@ namespace SocialEventPlatform.Domain.Guest
             UpdatedDateTime = updatedDateTime;
         }
 
-        public static Guest Create(
+        public static Host Create(
             string firstName,
             string lastName,
             string profileImage,
@@ -61,7 +50,7 @@ namespace SocialEventPlatform.Domain.Guest
             UserId userId)
         {
             return new(
-                GuestId.CreateUnique(),
+                HostId.CreateUnique(),
                 firstName,
                 lastName,
                 profileImage,
