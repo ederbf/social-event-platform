@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace ActivityPlatform.Application.Authentication.Queries.Login
+namespace SocialEventPlatform.Application.Authentication.Queries.Login
 {
     public class LoginQueryValidator : AbstractValidator<LoginQuery>
     {

@@ -1,4 +1,4 @@
-﻿namespace ActivityPlatform.Contracts.Authentication
+﻿namespace SocialEventPlatform.Contracts.Authentication
 {
     public record LoginRequest(
         string Email,

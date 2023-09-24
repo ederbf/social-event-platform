@@ -1,9 +1,9 @@
-﻿using ActivityPlatform.Application.Common.Interfaces.Authentication;
-using ActivityPlatform.Application.Common.Interfaces.Persistence;
-using ActivityPlatform.Application.Common.Interfaces.Services;
-using ActivityPlatform.Infrastructure.Authentication;
-using ActivityPlatform.Infrastructure.Persistence;
-using ActivityPlatform.Infrastructure.Services;
+﻿using SocialEventPlatform.Application.Common.Interfaces.Authentication;
+using SocialEventPlatform.Application.Common.Interfaces.Persistence;
+using SocialEventPlatform.Application.Common.Interfaces.Services;
+using SocialEventPlatform.Infrastructure.Authentication;
+using SocialEventPlatform.Infrastructure.Persistence;
+using SocialEventPlatform.Infrastructure.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Authentication;
@@ -12,7 +12,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.Extensions.Options;
 
-namespace ActivityPlatform.Infrastructure
+namespace SocialEventPlatform.Infrastructure
 {
     public static class DependencyInjection
     {

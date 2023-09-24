@@ -1,4 +1,4 @@
-﻿namespace ActivityPlatform.Contracts.Authentication
+﻿namespace SocialEventPlatform.Contracts.Authentication
 {
     public record RegisterRequest(
         string FirstName,

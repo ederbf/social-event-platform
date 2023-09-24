@@ -1,4 +1,4 @@
-﻿using ActivityPlatform.Api.Common.Http;
+﻿using SocialEventPlatform.Api.Common.Http;
 using ErrorOr;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
@@ -6,18 +6,18 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.Extensions.Options;
 using System.Diagnostics;
 
-namespace ActivityPlatform.Api.Common.Errors
+namespace SocialEventPlatform.Api.Common.Errors
 {
     //This is a class copy-pasted from the DefaultProblemDetailsFactory, a part of the framework.
     //It's internal sealed so we can't directly extend it. 
     //The goal is to have the ability to add custom properties to the problem details
     //This is done at the end of the ApplyProblemDetailsDefaults method.
 
-    public class ActivityPlatformProblemDetailsFactory : ProblemDetailsFactory
+    public class SocialEventPlatformProblemDetailsFactory : ProblemDetailsFactory
     {
         private readonly ApiBehaviorOptions _options;
 
-        public ActivityPlatformProblemDetailsFactory(
+        public SocialEventPlatformProblemDetailsFactory(
             IOptions<ApiBehaviorOptions> options)
         {
             _options = options?.Value ?? throw new ArgumentNullException(nameof(options));

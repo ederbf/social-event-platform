@@ -1,10 +1,10 @@
-﻿using ActivityPlatform.Application.Authentication.Commands.Register;
-using ActivityPlatform.Application.Authentication.Common;
-using ActivityPlatform.Application.Authentication.Queries.Login;
-using ActivityPlatform.Contracts.Authentication;
+﻿using SocialEventPlatform.Application.Authentication.Commands.Register;
+using SocialEventPlatform.Application.Authentication.Common;
+using SocialEventPlatform.Application.Authentication.Queries.Login;
+using SocialEventPlatform.Contracts.Authentication;
 using Mapster;
 
-namespace ActivityPlatform.Api.Common.Mapping
+namespace SocialEventPlatform.Api.Common.Mapping
 {
     public class AuthenticationMappingConfig : IRegister
     {

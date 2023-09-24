@@ -1,10 +1,10 @@
-﻿using ActivityPlatform.Api.Common.Http;
+﻿using SocialEventPlatform.Api.Common.Http;
 using ErrorOr;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 
-namespace ActivityPlatform.Api.Controllers
+namespace SocialEventPlatform.Api.Controllers
 {
     [ApiController]
     [Authorize]

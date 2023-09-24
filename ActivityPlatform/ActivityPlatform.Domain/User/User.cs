@@ -1,4 +1,4 @@
-﻿namespace ActivityPlatform.Domain
+﻿namespace SocialEventPlatform.Domain.User
 {
     public class User
     {

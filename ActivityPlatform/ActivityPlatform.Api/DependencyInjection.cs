@@ -1,8 +1,8 @@
-﻿using ActivityPlatform.Api.Common.Errors;
-using ActivityPlatform.Api.Common.Mapping;
+﻿using SocialEventPlatform.Api.Common.Errors;
+using SocialEventPlatform.Api.Common.Mapping;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 
-namespace ActivityPlatform.Api
+namespace SocialEventPlatform.Api
 {
     public static class DependencyInjection
     {
@@ -10,7 +10,7 @@ namespace ActivityPlatform.Api
         {
             services.AddControllers();
 
-            services.AddSingleton<ProblemDetailsFactory, ActivityPlatformProblemDetailsFactory>();
+            services.AddSingleton<ProblemDetailsFactory, SocialEventPlatformProblemDetailsFactory>();
 
             services.AddMappings();
 

@@ -1,13 +1,13 @@
-﻿using ActivityPlatform.Application.Authentication.Commands.Register;
-using ActivityPlatform.Application.Authentication.Common;
-using ActivityPlatform.Application.Common.Behaviors;
+﻿using SocialEventPlatform.Application.Authentication.Commands.Register;
+using SocialEventPlatform.Application.Authentication.Common;
+using SocialEventPlatform.Application.Common.Behaviors;
 using ErrorOr;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
-namespace ActivityPlatform.Application
+namespace SocialEventPlatform.Application
 {
     public static class DependencyInjection
     {

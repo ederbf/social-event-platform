@@ -1,15 +1,15 @@
-﻿using ActivityPlatform.Contracts.Authentication;
+﻿using SocialEventPlatform.Contracts.Authentication;
 using Microsoft.AspNetCore.Mvc;
-using ActivityPlatform.Domain.Common.Errors;
+using SocialEventPlatform.Domain.Common.Errors;
 using MediatR;
-using ActivityPlatform.Application.Authentication.Commands.Register;
-using ActivityPlatform.Application.Authentication.Common;
-using ActivityPlatform.Application.Authentication.Queries.Login;
+using SocialEventPlatform.Application.Authentication.Commands.Register;
+using SocialEventPlatform.Application.Authentication.Common;
+using SocialEventPlatform.Application.Authentication.Queries.Login;
 using MapsterMapper;
 using ErrorOr;
 using Microsoft.AspNetCore.Authorization;
 
-namespace ActivityPlatform.Api.Controllers
+namespace SocialEventPlatform.Api.Controllers
 {
     [Route("auth")]
     [AllowAnonymous]

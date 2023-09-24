@@ -1,13 +1,13 @@
-﻿using ActivityPlatform.Application.Authentication.Common;
-using ActivityPlatform.Application.Authentication.Queries.Login;
-using ActivityPlatform.Application.Common.Interfaces.Authentication;
-using ActivityPlatform.Application.Common.Interfaces.Persistence;
-using ActivityPlatform.Domain;
-using ActivityPlatform.Domain.Common.Errors;
+﻿using SocialEventPlatform.Application.Authentication.Common;
+using SocialEventPlatform.Application.Authentication.Queries.Login;
+using SocialEventPlatform.Application.Common.Interfaces.Authentication;
+using SocialEventPlatform.Application.Common.Interfaces.Persistence;
+using SocialEventPlatform.Domain.Common.Errors;
 using ErrorOr;
 using MediatR;
+using SocialEventPlatform.Domain.User;
 
-namespace ActivityPlatform.Application.Authentication.Commands.Register
+namespace SocialEventPlatform.Application.Authentication.Commands.Register
 {
     public class LoginQueryHandler :
         IRequestHandler<LoginQuery, ErrorOr<AuthenticationResult>>

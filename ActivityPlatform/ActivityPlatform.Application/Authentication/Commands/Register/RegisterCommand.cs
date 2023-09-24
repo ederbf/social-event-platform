@@ -1,8 +1,8 @@
-﻿using ActivityPlatform.Application.Authentication.Common;
+﻿using SocialEventPlatform.Application.Authentication.Common;
 using ErrorOr;
 using MediatR;
 
-namespace ActivityPlatform.Application.Authentication.Commands.Register
+namespace SocialEventPlatform.Application.Authentication.Commands.Register
 {
     public record RegisterCommand(
         string FirstName,

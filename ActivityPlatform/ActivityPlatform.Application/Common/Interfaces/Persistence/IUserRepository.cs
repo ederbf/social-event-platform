@@ -1,6 +1,6 @@
-﻿using ActivityPlatform.Domain;
+﻿using SocialEventPlatform.Domain.User;
 
-namespace ActivityPlatform.Application.Common.Interfaces.Persistence
+namespace SocialEventPlatform.Application.Common.Interfaces.Persistence
 {
     public interface IUserRepository
     {

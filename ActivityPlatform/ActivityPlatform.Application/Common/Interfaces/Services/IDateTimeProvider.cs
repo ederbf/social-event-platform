@@ -1,4 +1,4 @@
-﻿namespace ActivityPlatform.Application.Common.Interfaces.Services
+﻿namespace SocialEventPlatform.Application.Common.Interfaces.Services
 {
     public interface IDateTimeProvider
     {

@@ -1,8 +1,8 @@
-﻿using ActivityPlatform.Application.Authentication.Common;
+﻿using SocialEventPlatform.Application.Authentication.Common;
 using ErrorOr;
 using MediatR;
 
-namespace ActivityPlatform.Application.Authentication.Queries.Login
+namespace SocialEventPlatform.Application.Authentication.Queries.Login
 {
     public record LoginQuery(
         string Email,

@@ -1,13 +1,13 @@
-﻿using ActivityPlatform.Application.Common.Interfaces.Authentication;
-using ActivityPlatform.Application.Common.Interfaces.Services;
-using ActivityPlatform.Domain;
+﻿using SocialEventPlatform.Application.Common.Interfaces.Authentication;
+using SocialEventPlatform.Application.Common.Interfaces.Services;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using SocialEventPlatform.Domain.User;
 
-namespace ActivityPlatform.Infrastructure.Authentication
+namespace SocialEventPlatform.Infrastructure.Authentication
 {
     public class JwtTokenGenerator : IJwtTokenGenerator
     {

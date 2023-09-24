@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace ActivityPlatform.Api.Controllers
+namespace SocialEventPlatform.Api.Controllers
 {
     [Route("[controller]")]
-    public class ActivitiesController : ApiController
+    public class SocialEventsController : ApiController
     {
         [HttpGet]
-        public IActionResult ListActivities()
+        public IActionResult ListSocialEvents()
         {
             return Ok(Array.Empty<string>());
         }

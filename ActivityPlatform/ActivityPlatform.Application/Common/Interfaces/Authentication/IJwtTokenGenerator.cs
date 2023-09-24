@@ -1,6 +1,6 @@
-﻿using ActivityPlatform.Domain;
+﻿using SocialEventPlatform.Domain.User;
 
-namespace ActivityPlatform.Application.Common.Interfaces.Authentication
+namespace SocialEventPlatform.Application.Common.Interfaces.Authentication
 {
     public interface IJwtTokenGenerator
     {

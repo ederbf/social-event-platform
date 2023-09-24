@@ -1,4 +1,4 @@
-﻿namespace ActivityPlatform.Api.Common.Http
+﻿namespace SocialEventPlatform.Api.Common.Http
 {
     public static class HttpContextItemKeys
     {

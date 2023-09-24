@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ActivityPlatform.Domain\ActivityPlatform.Domain.csproj" />
+    <ProjectReference Include="..\ActivityPlatform.Domain\SocialEventPlatform.Domain.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,6 +1,6 @@
-using ActivityPlatform.Api;
-using ActivityPlatform.Application;
-using ActivityPlatform.Infrastructure;
+using SocialEventPlatform.Api;
+using SocialEventPlatform.Application;
+using SocialEventPlatform.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 

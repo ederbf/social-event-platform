@@ -13,9 +13,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ActivityPlatform.Application\ActivityPlatform.Application.csproj" />
-    <ProjectReference Include="..\ActivityPlatform.Contracts\ActivityPlatform.Contracts.csproj" />
-    <ProjectReference Include="..\ActivityPlatform.Infrastructure\ActivityPlatform.Infrastructure.csproj" />
+    <ProjectReference Include="..\ActivityPlatform.Application\SocialEventPlatform.Application.csproj" />
+    <ProjectReference Include="..\ActivityPlatform.Contracts\SocialEventPlatform.Contracts.csproj" />
+    <ProjectReference Include="..\ActivityPlatform.Infrastructure\SocialEventPlatform.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,6 +1,6 @@
-﻿using ActivityPlatform.Domain;
+﻿using SocialEventPlatform.Domain.User;
 
-namespace ActivityPlatform.Application.Authentication.Common
+namespace SocialEventPlatform.Application.Authentication.Common
 {
     public record AuthenticationResult(
         User User,

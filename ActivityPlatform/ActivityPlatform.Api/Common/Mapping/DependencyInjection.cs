@@ -2,7 +2,7 @@
 using MapsterMapper;
 using System.Reflection;
 
-namespace ActivityPlatform.Api.Common.Mapping
+namespace SocialEventPlatform.Api.Common.Mapping
 {
     public static class DependencyInjection
     {

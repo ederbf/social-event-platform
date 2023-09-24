@@ -1,11 +1,11 @@
-﻿using ActivityPlatform.Application.Common.Interfaces.Authentication;
-using ActivityPlatform.Application.Common.Interfaces.Services;
+﻿using SocialEventPlatform.Application.Common.Interfaces.Authentication;
+using SocialEventPlatform.Application.Common.Interfaces.Services;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace ActivityPlatform.Infrastructure.Authentication
+namespace SocialEventPlatform.Infrastructure.Authentication
 {
     public class JwtSettings
     {

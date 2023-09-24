@@ -1,6 +1,6 @@
-﻿using ActivityPlatform.Application.Common.Interfaces.Services;
+﻿using SocialEventPlatform.Application.Common.Interfaces.Services;
 
-namespace ActivityPlatform.Infrastructure.Services
+namespace SocialEventPlatform.Infrastructure.Services
 {
     public class DateTimeProvider : IDateTimeProvider
     {

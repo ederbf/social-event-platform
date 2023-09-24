@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ActivityPlatform.Api.Controllers
+namespace SocialEventPlatform.Api.Controllers
 {
     [ApiExplorerSettings(IgnoreApi = true)]
     public class ErrorsController : ControllerBase

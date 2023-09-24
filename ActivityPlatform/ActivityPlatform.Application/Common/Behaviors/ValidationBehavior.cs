@@ -1,10 +1,10 @@
-﻿using ActivityPlatform.Application.Authentication.Commands.Register;
-using ActivityPlatform.Application.Authentication.Common;
+﻿using SocialEventPlatform.Application.Authentication.Commands.Register;
+using SocialEventPlatform.Application.Authentication.Common;
 using ErrorOr;
 using FluentValidation;
 using MediatR;
 
-namespace ActivityPlatform.Application.Common.Behaviors
+namespace SocialEventPlatform.Application.Common.Behaviors
 {
     public class ValidationBehavior<TRequest, TResponse> : 
         IPipelineBehavior<TRequest, TResponse>

@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace ActivityPlatform.Application.Authentication.Commands.Register
+namespace SocialEventPlatform.Application.Authentication.Commands.Register
 {
     public class RegisterCommandValidator : AbstractValidator<RegisterCommand>
     {

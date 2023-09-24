@@ -1,12 +1,12 @@
-﻿using ActivityPlatform.Application.Authentication.Common;
-using ActivityPlatform.Application.Common.Interfaces.Authentication;
-using ActivityPlatform.Application.Common.Interfaces.Persistence;
-using ActivityPlatform.Domain;
-using ActivityPlatform.Domain.Common.Errors;
+﻿using SocialEventPlatform.Application.Authentication.Common;
+using SocialEventPlatform.Application.Common.Interfaces.Authentication;
+using SocialEventPlatform.Application.Common.Interfaces.Persistence;
+using SocialEventPlatform.Domain;
+using SocialEventPlatform.Domain.Common.Errors;
 using ErrorOr;
 using MediatR;
 
-namespace ActivityPlatform.Application.Authentication.Commands.Register
+namespace SocialEventPlatform.Application.Authentication.Commands.Register
 {
     public class RegisterCommandHandler : 
         IRequestHandler<RegisterCommand, ErrorOr<AuthenticationResult>>

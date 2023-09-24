@@ -1,6 +1,6 @@
 ﻿using ErrorOr;
 
-namespace ActivityPlatform.Domain.Common.Errors
+namespace SocialEventPlatform.Domain.Common.Errors
 {
     public static partial class Errors
     {
