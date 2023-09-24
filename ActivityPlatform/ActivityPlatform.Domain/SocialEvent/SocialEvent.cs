@@ -25,6 +25,8 @@ namespace SocialEventPlatform.Domain.SocialEvent
         public string ImageUrl { get; }
         public Location Location { get; }
 
+        public IReadOnlyList<Reservation> Reservations => _reservations.AsReadOnly();
+
         public DateTime CreatedDateTime { get; }
         public DateTime UpdatedDateTime { get; }
 
