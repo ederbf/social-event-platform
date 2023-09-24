@@ -20,7 +20,7 @@ namespace SocialEventPlatform.Domain.Activity
 
         public IReadOnlyList<ActivitySection> Sections => _sections.AsReadOnly();
 
-        public HostId HostId { get; }
+        public GuestId HostId { get; }
         public IReadOnlyList<SocialEventId> SocialEventIds => _socialEventIds.AsReadOnly();
         public IReadOnlyList<ActivityReviewId> ActivityReviewIds => _activityReviewIds.AsReadOnly();
 
@@ -31,7 +31,7 @@ namespace SocialEventPlatform.Domain.Activity
             ActivityId activityId,
             string name,
             string description,
-            HostId hostId,
+            GuestId hostId,
             DateTime createdDateTime,
             DateTime updatedDateTime) : base(activityId)
         {
@@ -45,7 +45,7 @@ namespace SocialEventPlatform.Domain.Activity
         public static Activity Create(
             string name,
             string description,
-            HostId hostId)
+            GuestId hostId)
         {
             return new(
                 ActivityId.CreateUnique(),
