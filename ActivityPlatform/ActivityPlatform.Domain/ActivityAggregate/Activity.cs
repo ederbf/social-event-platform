@@ -4,6 +4,7 @@ using SocialEventPlatform.Domain.ActivityReviewAggregate.ValueObjects;
 using SocialEventPlatform.Domain.Common.Models;
 using SocialEventPlatform.Domain.Common.ValueObjects;
 using SocialEventPlatform.Domain.GuestAggregate.ValueObjects;
+using SocialEventPlatform.Domain.HostAggregate.ValueObjects;
 using SocialEventPlatform.Domain.SocialEventAggregate.ValueObjects;
 
 namespace SocialEventPlatform.Domain.ActivityAggregate
@@ -16,11 +17,11 @@ namespace SocialEventPlatform.Domain.ActivityAggregate
 
         public string Name { get; }
         public string Description { get; }
-        public AverageRating AverageRating { get; }
+        public AverageRating? AverageRating { get; }
 
         public IReadOnlyList<ActivitySection> Sections => _sections.AsReadOnly();
 
-        public GuestId HostId { get; }
+        public HostId HostId { get; }
         public IReadOnlyList<SocialEventId> SocialEventIds => _socialEventIds.AsReadOnly();
         public IReadOnlyList<ActivityReviewId> ActivityReviewIds => _activityReviewIds.AsReadOnly();
 
@@ -31,21 +32,24 @@ namespace SocialEventPlatform.Domain.ActivityAggregate
             ActivityId activityId,
             string name,
             string description,
-            GuestId hostId,
+            HostId hostId,
             DateTime createdDateTime,
-            DateTime updatedDateTime) : base(activityId)
+            DateTime updatedDateTime,
+            List<ActivitySection> sections) : base(activityId)
         {
             Name = name;
             Description = description;
             HostId = hostId;
             CreatedDateTime = createdDateTime;
             UpdatedDateTime = updatedDateTime;
+            _sections = sections;
         }
 
         public static Activity Create(
             string name,
             string description,
-            GuestId hostId)
+            HostId hostId, 
+            List<ActivitySection> activitySections)
         {
             return new(
                 ActivityId.CreateUnique(),
@@ -53,7 +57,8 @@ namespace SocialEventPlatform.Domain.ActivityAggregate
                 description,
                 hostId,
                 DateTime.UtcNow,
-                DateTime.UtcNow);
+                DateTime.UtcNow,
+                activitySections);
         }
     }
 }

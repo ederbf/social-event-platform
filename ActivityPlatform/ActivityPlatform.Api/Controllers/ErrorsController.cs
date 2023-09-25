@@ -9,7 +9,7 @@ namespace SocialEventPlatform.Api.Controllers
         [Route("/error")]
         public IActionResult Error()
         {
-            //Exception? exception = HttpContext.Features.Get<IExceptionHandlerFeature>()?.Error;
+            Exception? exception = HttpContext.Features.Get<IExceptionHandlerFeature>()?.Error;
 
             return Problem();
         }

@@ -4,14 +4,14 @@ namespace SocialEventPlatform.Domain.Common.ValueObjects
 {
     public sealed class Rating : ValueObject
     {
-        private Rating(double value)
+        private Rating(float value)
         {
             Value = value;
         }
 
-        public double Value { get; private set; }
+        public float Value { get; private set; }
 
-        public static Rating CreateNew(double rating = 0)
+        public static Rating CreateNew(float rating = 0)
         {
             return new Rating(rating);
         }
