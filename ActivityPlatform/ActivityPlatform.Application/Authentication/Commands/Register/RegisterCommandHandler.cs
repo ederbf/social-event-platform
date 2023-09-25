@@ -30,13 +30,12 @@ namespace SocialEventPlatform.Application.Authentication.Commands.Register
                 return Errors.User.DuplicateEmail;
 
             //2. Create user (generate unique id and persist to DB
-            var user = new User
-            {
-                FirstName = command.FirstName,
-                LastName = command.LastName,
-                Email = command.Email,
-                Password = command.Password
-            };
+            var user = User.Create(
+                command.FirstName,
+                command.LastName,
+                command.Email,
+                command.Password
+            );
 
             _userRepository.Add(user);
 

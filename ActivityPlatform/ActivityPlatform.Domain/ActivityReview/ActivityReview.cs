@@ -4,7 +4,6 @@ using SocialEventPlatform.Domain.Common.Models;
 using SocialEventPlatform.Domain.Common.ValueObjects;
 using SocialEventPlatform.Domain.Host.ValueObjects;
 using SocialEventPlatform.Domain.SocialEvent.ValueObjects;
-using System.Xml.Linq;
 
 namespace SocialEventPlatform.Domain.ActivityReview
 {
