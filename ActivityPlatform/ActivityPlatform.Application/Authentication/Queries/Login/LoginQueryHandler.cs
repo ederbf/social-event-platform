@@ -5,7 +5,7 @@ using SocialEventPlatform.Application.Common.Interfaces.Persistence;
 using SocialEventPlatform.Domain.Common.Errors;
 using ErrorOr;
 using MediatR;
-using SocialEventPlatform.Domain.User;
+using SocialEventPlatform.Domain.UserAggregate;
 
 namespace SocialEventPlatform.Application.Authentication.Commands.Register
 {

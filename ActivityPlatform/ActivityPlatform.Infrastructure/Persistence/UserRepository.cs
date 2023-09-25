@@ -1,5 +1,5 @@
 ﻿using SocialEventPlatform.Application.Common.Interfaces.Persistence;
-using SocialEventPlatform.Domain.User;
+using SocialEventPlatform.Domain.UserAggregate;
 
 namespace SocialEventPlatform.Infrastructure.Persistence
 {

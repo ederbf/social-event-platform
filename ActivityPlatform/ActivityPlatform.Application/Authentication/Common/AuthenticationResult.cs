@@ -1,4 +1,4 @@
-﻿using SocialEventPlatform.Domain.User;
+﻿using SocialEventPlatform.Domain.UserAggregate;
 
 namespace SocialEventPlatform.Application.Authentication.Common
 {
